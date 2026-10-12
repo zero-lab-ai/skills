@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<nmaprun scanner="nmap" args="nmap -sS -sU -sV -p- -oX out.xml 172.16.112.0/24" start="1">
+  <host><status state="down"/><address addr="172.16.112.10" addrtype="ipv4"/></host>
+  <host><status state="down"/><address addr="172.16.112.11" addrtype="ipv4"/></host>
+  <runstats><finished elapsed="7"/></runstats>
+</nmaprun>

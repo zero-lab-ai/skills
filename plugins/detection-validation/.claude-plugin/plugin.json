@@ -1,0 +1,10 @@
+{
+  "name": "detection-validation",
+  "version": "0.1.1",
+  "description": "Builds and validates detections, audits telemetry coverage, tests defensive resilience, correlates incident evidence, and synthesizes control evidence without inflating coverage.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

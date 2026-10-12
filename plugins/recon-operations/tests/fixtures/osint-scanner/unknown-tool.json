@@ -1,0 +1,2 @@
+{"stealth": "passive", "target": "example.com",
+ "actions": [{"tool": "crtsh"}, {"tool": "some-new-scanner", "note": "unclassified"}]}

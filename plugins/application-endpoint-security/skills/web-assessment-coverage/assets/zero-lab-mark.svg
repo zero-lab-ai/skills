@@ -1,0 +1,346 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -27.5 200 280" width="200" height="280">
+  <defs>
+    
+    <linearGradient id="facet-left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"></stop>
+      <stop offset="100%" stop-color="#2d2d2d"></stop>
+    </linearGradient>
+    <linearGradient id="facet-right" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080808"></stop>
+      <stop offset="100%" stop-color="#141414"></stop>
+    </linearGradient>
+    <linearGradient id="facet-top-left" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#383838"></stop>
+      <stop offset="100%" stop-color="#4a4a4a"></stop>
+    </linearGradient>
+    <linearGradient id="facet-top-right" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1e1e1e"></stop>
+      <stop offset="100%" stop-color="#303030"></stop>
+    </linearGradient>
+    
+    <radialGradient id="rip-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+      <stop offset="12%" stop-color="#ffffff" stop-opacity="0.8"></stop>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.4"></stop>
+      <stop offset="55%" stop-color="#e8e8e8" stop-opacity="0.12"></stop>
+      <stop offset="100%" stop-color="#999" stop-opacity="0"></stop>
+    </radialGradient>
+    
+    <radialGradient id="rip-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"></stop>
+      <stop offset="50%" stop-color="#ddd" stop-opacity="0.08"></stop>
+      <stop offset="100%" stop-color="#999" stop-opacity="0"></stop>
+    </radialGradient>
+    
+    <clipPath id="prism-clip">
+      <polygon points="0,-130 -65,20 0,75 65,20"></polygon>
+    </clipPath>
+    
+    <radialGradient id="corruption-fade" cx="100" cy="113" r="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="white"></stop>
+      <stop offset="40%" stop-color="white" stop-opacity="0.8"></stop>
+      <stop offset="70%" stop-color="white" stop-opacity="0.3"></stop>
+      <stop offset="100%" stop-color="black"></stop>
+    </radialGradient>
+    <mask id="corruption-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="280">
+      <rect x="0" y="0" width="200" height="280" fill="url(#corruption-fade)"></rect>
+    </mask>
+    
+    <filter id="awakened-eye" x="-20%" y="-20%" width="140%" height="140%">
+      
+      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.06" numOctaves="4" seed="7" result="corruption">
+        
+        
+      </feTurbulence>
+      
+      <feDisplacementMap in="SourceGraphic" in2="corruption" scale="6" xChannelSelector="R" yChannelSelector="G" result="warped"></feDisplacementMap>
+      
+      <feComponentTransfer in="warped" result="sharpened">
+        <feFuncR type="linear" slope="1.3" intercept="-0.05"></feFuncR>
+        <feFuncG type="linear" slope="1.3" intercept="-0.05"></feFuncG>
+        <feFuncB type="linear" slope="1.3" intercept="-0.05"></feFuncB>
+      </feComponentTransfer>
+      
+      <feTurbulence type="turbulence" baseFrequency="0.0 0.4" numOctaves="1" seed="42" result="scanlines">
+        
+      </feTurbulence>
+      
+      <feBlend in="sharpened" in2="scanlines" mode="multiply" result="dirty"></feBlend>
+      
+      <feBlend in="dirty" in2="SourceGraphic" mode="screen"></feBlend>
+    </filter>
+  </defs>
+
+  <g transform="translate(100, 140)">
+    
+    
+    <polygon points="0,75 -65,20 0,10" fill="url(#facet-left)" opacity="0.95"></polygon>
+    
+    <polygon points="0,75 65,20 0,10" fill="url(#facet-right)" opacity="0.95"></polygon>
+    
+    <polygon points="-65,20 0,-130 -30,-50" fill="url(#facet-top-left)" opacity="0.9"></polygon>
+    
+    <polygon points="65,20 0,-130 30,-50" fill="url(#facet-top-right)" opacity="0.9"></polygon>
+    
+    <polygon points="-30,-50 0,-130 0,-40" fill="#111" opacity="0.95"></polygon>
+    
+    <polygon points="30,-50 0,-130 0,-40" fill="#111" opacity="0.95"></polygon>
+    
+    <polygon points="-65,20 -30,-50 0,10" fill="#111" opacity="0.95"></polygon>
+    
+    <polygon points="65,20 30,-50 0,10" fill="#111" opacity="0.95"></polygon>
+    
+    <polygon points="0,-40 -30,-50 0,10 30,-50" fill="#111" opacity="0.95"></polygon>
+
+    
+    <g clip-path="url(#prism-clip)" filter="url(#awakened-eye)" mask="url(#corruption-mask)">
+
+      
+      <ellipse cx="0" cy="-27" rx="45" ry="40" fill="url(#rip-halo)">
+        
+        
+        
+      </ellipse>
+      <ellipse cx="0" cy="-27" rx="18" ry="14" fill="url(#rip-core)">
+        
+        
+        
+      </ellipse>
+
+      
+      
+      <g transform="translate(0, -27)">
+        <g><rect x="7" y="-1" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="-5" y="3" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="3" y="-8" width="2" height="2" fill="#eee"></rect>
+          
+          
+        </g>
+        <g><rect x="-9" y="-2" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="4" y="8" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="-8" y="6" width="2" height="2" fill="#eee"></rect>
+          
+          
+        </g>
+        <g><rect x="10" y="1" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="-3" y="-10" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="6" y="-6" width="2" height="2" fill="#fff"></rect>
+          
+          
+        </g>
+        <g><rect x="-6" y="-7" width="2" height="2" fill="#eee"></rect>
+          
+          
+        </g>
+        
+        <rect x="-3" y="-2" width="6" height="4" fill="#fff">
+          
+        </rect>
+      </g>
+
+      
+      <g transform="translate(0, -27)">
+        <g><rect x="20" y="-2" width="2" height="2" fill="#ddd"></rect>
+          
+          
+        </g>
+        <g><rect x="-16" y="4" width="2" height="2" fill="#ccc"></rect>
+          
+          
+        </g>
+        <g><rect x="6" y="-22" width="2" height="2" fill="#ddd"></rect>
+          
+          
+        </g>
+        <g><rect x="-25" y="-6" width="2" height="2" fill="#ccc"></rect>
+          
+          
+        </g>
+        <g><rect x="14" y="18" width="2" height="2" fill="#ccc"></rect>
+          
+          
+        </g>
+        <g><rect x="-10" y="-28" width="2" height="2" fill="#ddd"></rect>
+          
+          
+        </g>
+        <g><rect x="28" y="3" width="2" height="2" fill="#bbb"></rect>
+          
+          
+        </g>
+        <g><rect x="-22" y="14" width="2" height="2" fill="#ccc"></rect>
+          
+          
+        </g>
+      </g>
+
+      
+      <g transform="translate(0, -27)">
+        <rect x="-2" y="0" width="1.5" height="1.5" fill="#fff">
+          
+          
+          
+        </rect>
+        <rect x="3" y="0" width="1" height="1" fill="#ddd">
+          
+          
+          
+        </rect>
+        <rect x="0" y="0" width="1.5" height="1.5" fill="#eee">
+          
+          
+          
+        </rect>
+        <rect x="-4" y="0" width="1" height="1" fill="#fff">
+          
+          
+          
+        </rect>
+        <rect x="5" y="0" width="1.5" height="1.5" fill="#ccc">
+          
+          
+          
+        </rect>
+        
+        <rect x="1" y="0" width="1" height="1" fill="#fff">
+          
+          
+          
+        </rect>
+        <rect x="-3" y="0" width="1.5" height="1.5" fill="#ddd">
+          
+          
+          
+        </rect>
+      </g>
+
+      
+      <g fill="none" stroke="#fff" stroke-linecap="round" transform="translate(0, -27)">
+        <polyline points="0,0 -6,-10 -3,-18 -12,-30 -8,-43 -20,-58" stroke-width="1">
+          
+        </polyline>
+        <polyline points="0,0 -8,-8 -5,-20 -14,-28 -10,-40" stroke-width="0.5" opacity="0">
+          
+        </polyline>
+        <polyline points="0,0 5,-10 10,-20 6,-33 14,-46 12,-63" stroke-width="1">
+          
+        </polyline>
+        <polyline points="0,0 7,-12 8,-22 9,-35 12,-50" stroke-width="0.5">
+          
+        </polyline>
+        <polyline points="0,0 -10,-4 -18,2 -30,-4 -42,0 -52,-6" stroke-width="1">
+          
+        </polyline>
+        <polyline points="0,0 12,4 20,-4 30,2 42,-2 52,2" stroke-width="1">
+          
+        </polyline>
+        <polyline points="0,0 -6,10 -12,20 -8,30 -14,40 -10,50" stroke-width="0.8">
+          
+        </polyline>
+        <polyline points="0,0 8,10 5,20 12,32 8,42 10,50" stroke-width="0.8">
+          
+        </polyline>
+        <polyline points="0,0 2,-13 -2,-28 3,-46 -1,-63 1,-83" stroke-width="1.2">
+          
+        </polyline>
+        <polyline points="0,0 -2,12 3,24 -1,37 2,47 0,54" stroke-width="0.8">
+          
+        </polyline>
+        
+        <polyline points="0,0 -4,-6 -8,-4" stroke-width="0.6">
+          
+        </polyline>
+        <polyline points="0,0 6,-3 4,-8" stroke-width="0.6">
+          
+        </polyline>
+        <polyline points="0,0 -3,7 -7,5" stroke-width="0.6">
+          
+        </polyline>
+        <polyline points="0,0 5,5 8,2" stroke-width="0.6">
+          
+        </polyline>
+      </g>
+
+      
+      <g fill="none" transform="translate(0, -27)">
+        
+        <circle cx="0" cy="0" r="1" stroke="#fff" stroke-width="0.6">
+          
+          
+          
+          
+        </circle>
+        
+        <circle cx="0" cy="0" r="1" stroke="#eee" stroke-width="0.5">
+          
+          
+          
+          
+          
+        </circle>
+      </g>
+
+    </g>
+
+    
+    <g clip-path="url(#prism-clip)">
+      
+      <g transform="translate(0, -27)">
+        <g><rect x="0" y="-45" width="2" height="2" fill="#888"></rect>
+          
+          
+        </g>
+        <g><rect x="-40" y="0" width="2" height="2" fill="#999"></rect>
+          
+          
+        </g>
+        <g><rect x="38" y="-8" width="2" height="2" fill="#888"></rect>
+          
+          
+        </g>
+        <g><rect x="-6" y="42" width="2" height="2" fill="#777"></rect>
+          
+          
+        </g>
+        <g><rect x="4" y="-52" width="2" height="2" fill="#777"></rect>
+          
+          
+        </g>
+      </g>
+    </g>
+
+    
+    <g stroke="#ffffff" stroke-width="1.8" fill="none" opacity="0.85" stroke-linejoin="round">
+      
+      <polygon points="0,-130 -65,20 0,75 65,20"></polygon>
+      
+      <line x1="0" y1="-130" x2="0" y2="75"></line>
+      
+      <line x1="-65" y1="20" x2="65" y2="20"></line>
+      
+      <line x1="-30" y1="-50" x2="30" y2="-50" opacity="0"></line>
+      <line x1="-65" y1="20" x2="0" y2="-40" opacity="0"></line>
+      <line x1="65" y1="20" x2="0" y2="-40" opacity="0"></line>
+      <line x1="-30" y1="-50" x2="0" y2="10" opacity="0"></line>
+      <line x1="30" y1="-50" x2="0" y2="10" opacity="0"></line>
+    </g>
+  </g>
+</svg>

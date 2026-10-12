@@ -1,0 +1,10 @@
+{
+  "name": "identity-security",
+  "version": "0.1.0",
+  "description": "Assesses Active Directory, AD CS, Kerberos, credentials, privilege escalation, lateral movement, and durable identity exposure while separating structural paths from demonstrated access.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "rag-security",
+  "version": "0.2.1",
+  "description": "Maps retrieval surfaces and assesses source integrity, tenant isolation, context handling, data exposure, and cleanup in RAG systems.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

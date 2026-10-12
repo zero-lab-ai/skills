@@ -1,0 +1,28 @@
+schema_version: "1.1"
+name: rag-surface-unknowns
+description: >
+  Observed search results reveal fields and citations, while retrieval settings
+  and the claimed vector backend remain unverified.
+tags: [rag, surface-recon, unknowns]
+
+execution:
+  prompt: |
+    Use rag-surface-recon to map this supplied staging observation. Five search
+    results expose document IDs, source URLs, tenant labels, similarity scores,
+    and citations. The assistant says the system uses a vector database and
+    returns the top five chunks. No configuration, trace, index receipt, filter
+    log, ranking telemetry, or cache record is available. One result lacks a
+    tenant label.
+
+    Report observed surfaces, defensible claims, unknowns, and the next passive
+    evidence requests. Do not query the system.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The response maps the exposed result fields and missing tenant label, but does
+  not claim a fixed top-k, vector backend, filter behavior, ranking policy, or
+  cache state without receipts.

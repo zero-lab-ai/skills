@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dataset Integrity Assessment"
+  short_description: "Audit ML dataset lineage and poisoning risk"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

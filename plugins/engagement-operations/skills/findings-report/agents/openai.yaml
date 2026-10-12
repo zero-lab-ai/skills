@@ -1,0 +1,6 @@
+interface:
+  display_name: "Findings Report"
+  short_description: "Write reproducible, evidence-backed security findings"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

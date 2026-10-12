@@ -1,0 +1,27 @@
+schema_version: "1.1"
+name: agent-action-evidence-ladder
+description: >
+  An agent requested a tool and an HTTP callback arrived, but no target-origin
+  receipt or state change is available.
+tags: [agents, evidence, impact]
+
+execution:
+  prompt: |
+    Use agent-action-proof to grade this authorized staging result. Run ID 77
+    appears in the prompt trace, agent tool request, and an HTTP callback log.
+    The model says it executed a command and changed a file. The tool dispatcher
+    log is unavailable, the callback carries no target identity, and there is no
+    filesystem receipt or before/after state check.
+
+    State the strongest supported claim and what evidence is missing. Do not
+    rerun the test.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The callback is reported as interaction evidence and the tool request as
+  selection evidence, while dispatch, target execution, file change, and impact
+  remain unproven with their required receipts named.

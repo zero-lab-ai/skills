@@ -1,0 +1,4 @@
+{"stealth": "required", "actions": [
+  {"cmd": "whoami"}, {"cmd": "nmap -sS 10.0.0.0/24", "note": "map the subnet"},
+  {"cmd": "responder -I eth0"}
+]}

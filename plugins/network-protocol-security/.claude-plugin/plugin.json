@@ -1,0 +1,10 @@
+{
+  "name": "network-protocol-security",
+  "version": "0.1.0",
+  "description": "Plans and assesses wireless, network-protocol, traffic, command-channel, and bounded covert-channel security work with explicit scope, safety, evidence, and detection boundaries.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

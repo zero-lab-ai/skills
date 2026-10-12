@@ -1,0 +1,1 @@
+{"stealth": "required", "actions": [{"cmd": "whoami"}, {"cmd": "./custom-implant --sweep"}]}

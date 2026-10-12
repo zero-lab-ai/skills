@@ -1,0 +1,6 @@
+{"stealth": "target-contact-authorized", "target": "example.com",
+ "actions": [
+   {"tool": "crtsh"},
+   {"tool": "httpx", "note": "contact accepted by RoE"},
+   {"tool": "amass", "mode": "brute"}
+ ]}

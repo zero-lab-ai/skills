@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<nmaprun scanner="nmap" args="nmap -F -oX out.xml 10.0.0.0/29" start="1">
+  <host><status state="up"/><address addr="10.0.0.5" addrtype="ipv4"/>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open"/></port>
+    </ports>
+  </host>
+  <runstats><finished elapsed="3"/></runstats>
+</nmaprun>

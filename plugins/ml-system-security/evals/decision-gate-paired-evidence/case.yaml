@@ -1,0 +1,28 @@
+schema_version: "1.1"
+name: decision-gate-paired-evidence
+description: >
+  A paired input changes an ML classifier result, but a downstream deterministic
+  rule still blocks the protected operation.
+tags: [ml, decision-boundary, paired-test]
+
+execution:
+  prompt: |
+    Use ml-decision-boundary-assessment to grade this authorized staging test.
+    The baseline input receives classifier label DENY with score 0.82. A single
+    approved field change produces ALLOW with score 0.57. The downstream policy
+    engine independently rejects both requests, no protected operation runs,
+    and the model version and policy version are recorded. No held-out pair has
+    been tested.
+
+    State what shifted, what security outcome is supported, the confounders,
+    and the next bounded evidence request. Do not execute another request.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  A model-decision shift is supported, while gate bypass and protected-system
+  effect remain unproven because the downstream rule blocked both requests. The
+  lack of held-out confirmation is retained as a limitation.

@@ -1,0 +1,27 @@
+schema_version: "1.1"
+name: retrieval-canary-separation
+description: >
+  A canary upload was accepted and a later answer contains a similar phrase,
+  but indexing and retrieval receipts are unavailable.
+tags: [rag, canary, evidence-boundary]
+
+execution:
+  prompt: |
+    Use retrieval-integrity-assessment to grade this staging RAG test. Canary
+    document ZL-CANARY-19 was accepted by the upload API. A later answer contains
+    the phrase "amber lattice," which also appears in the canary. There is no
+    index receipt, retrieved chunk ID, assembled context, citation, or baseline
+    query. The model route and cache state were not recorded.
+
+    State what is proven, what is not, and the safe next evidence requests. Do
+    not upload or query anything.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  Only submission and acceptance are supported. Indexing, retrieval, context
+  use, output influence, and downstream action remain unproven, with baseline,
+  route, cache, index, and retrieval receipts requested.

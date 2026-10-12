@@ -1,0 +1,4 @@
+{"techniques": [
+  {"id": "T1595.001", "name": "Port Scan", "executed": true, "coverage": "covered"},
+  {"id": "T1021.001", "name": "RDP Lateral", "executed": true}
+]}

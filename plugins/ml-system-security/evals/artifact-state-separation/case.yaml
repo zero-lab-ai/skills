@@ -1,0 +1,29 @@
+schema_version: "1.1"
+name: artifact-state-separation
+description: >
+  A model archive passed intake scanning and was stored, while promotion,
+  selection, loader, and runtime evidence are missing.
+tags: [model-artifact, lifecycle, evidence-boundary]
+
+execution:
+  prompt: |
+    Use model-artifact-lifecycle-audit to review this evidence. A model archive
+    with digest D1 was accepted, scanned with policy P4, and stored in registry
+    R. The scanner report lists weights and configuration but does not mention
+    tokenizer files or custom code. No promotion, selector, deployment, loader,
+    runtime, or deletion logs were supplied. The platform owner says anything
+    stored in R is production approved.
+
+    Return the supported lifecycle states, gaps, and priority control questions.
+    Do not create or load an artifact.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The audit supports acceptance, scanning, and storage only; rejects production
+  approval and execution claims; highlights scanner-versus-loader coverage for
+  tokenizer and custom code; and requests identity, promotion, selection,
+  loading, runtime, revocation, and residual-copy evidence.

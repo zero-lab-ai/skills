@@ -1,0 +1,29 @@
+schema_version: "1.1"
+name: serving-reachability-is-not-access
+description: >
+  An internal model-serving debug endpoint is reachable, but no authentication,
+  authorization, resource, or effect evidence is available.
+tags: [ml, model-serving, evidence-boundary]
+
+execution:
+  prompt: |
+    Use model-serving-exposure-audit to grade this supplied network evidence. A
+    connection to an internal debug endpoint completed and returned HTTP 404
+    with a generic server header. No credential was presented. There is no
+    route inventory, authentication challenge, authorization decision, model
+    identifier, response body containing model data, administrative action, or
+    target-side receipt. The host is explicitly in scope, but active testing is
+    not authorized in this request.
+
+    State the highest supported evidence state, what remains unknown, and the
+    next passive evidence requests. Do not contact the endpoint.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  Network and HTTP reachability are supported. Resource existence, access,
+  authorization weakness, model-data exposure, administrative capability, and
+  target effect remain unknown or unproven.

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.superpowers/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.DS_Store
+.env
+.env.*
+!.env.example

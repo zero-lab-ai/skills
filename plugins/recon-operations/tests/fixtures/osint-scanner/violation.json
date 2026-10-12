@@ -1,0 +1,6 @@
+{"stealth": "passive", "target": "example.com",
+ "actions": [
+   {"tool": "crtsh", "note": "subdomains"},
+   {"tool": "httpx", "note": "probe the live hosts we found"},
+   {"tool": "amass", "mode": "brute", "note": "brute the subdomain space"}
+ ]}

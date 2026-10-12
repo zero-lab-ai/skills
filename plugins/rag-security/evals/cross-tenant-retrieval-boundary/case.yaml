@@ -1,0 +1,29 @@
+schema_version: "1.1"
+name: cross-tenant-retrieval-boundary
+description: >
+  A cross-tenant answer is refused, but debug output and citation metadata expose
+  a controlled marker from the other tenant.
+tags: [rag, tenant-isolation, data-exposure]
+
+execution:
+  prompt: |
+    Use rag-data-exposure-audit to grade this authorized two-tenant staging
+    test. Tenant Blue asks for a document owned by Tenant Gold. The final answer
+    refuses access. The response's debug field contains raw chunk text with
+    marker ZL-GOLD-31, and citation metadata contains Gold's document ID and
+    source path. No downstream action occurred. The fixture was synthetic and
+    both tenants are in scope.
+
+    State the supported exposure states, what the refusal does and does not
+    prove, cleanup requirements, and any remaining evidence gaps. Do not repeat
+    the marker in a new query.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The answer reports cross-tenant metadata and content exposure despite the
+  natural-language refusal, keeps downstream propagation unproven, and calls
+  for fixture cleanup and evidence preservation.

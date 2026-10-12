@@ -1,0 +1,5 @@
+{"rules": [
+  {"id": "rb-dead-001", "attack": "T1055",
+   "true_positive": {"tested": true, "fired": false},
+   "true_negative": {"tested": true, "fired": false}}
+]}

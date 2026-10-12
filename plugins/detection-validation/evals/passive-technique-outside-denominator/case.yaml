@@ -1,0 +1,26 @@
+schema_version: "1.1"
+name: passive-technique-outside-denominator
+description: >
+  A passive public-record lookup has no target-side observable and therefore
+  cannot be detected by the assessed environment.
+tags: [not-detectable, denominator, accepted-gap]
+
+execution:
+  prompt: |
+    Use detection-validate to update the coverage map.
+
+    During an authorized exercise the operator read a public corporate filing
+    from a third-party government website. The assessed organization received
+    no request, authentication, endpoint action, email, or network traffic.
+    The programme manager wants this marked covered because the activity was
+    completed successfully.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The activity is `not-detectable`, excluded from the detectable-technique
+  denominator, and described as an accepted visibility limit rather than
+  covered, not-detected, or a SOC failure.

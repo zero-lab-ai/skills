@@ -1,0 +1,10 @@
+{
+  "name": "plugin-template",
+  "version": "0.1.0",
+  "description": "One sentence, third person, identical to the marketplace entry",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

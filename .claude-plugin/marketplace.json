@@ -1,0 +1,124 @@
+{
+  "name": "zero-lab",
+  "owner": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  },
+  "metadata": {
+    "version": "1.2.1",
+    "description": "Security skills from zero-lab.ai for authorized assessment, detection, and engagement work"
+  },
+  "plugins": [
+    {
+      "name": "agent-security",
+      "description": "Reviews agent and MCP surfaces, tests prompt-injection and runtime controls, and maps identity and authority across agent handoffs.",
+      "version": "0.3.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/agent-security"
+    },
+    {
+      "name": "recon-operations",
+      "description": "Provides authorized network, public-exposure, human, physical, and AI-system reconnaissance with explicit scope, contact, noise, evidence, and automation boundaries.",
+      "version": "0.2.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/recon-operations"
+    },
+    {
+      "name": "identity-security",
+      "description": "Assesses Active Directory, AD CS, Kerberos, credentials, privilege escalation, lateral movement, and durable identity exposure while separating structural paths from demonstrated access.",
+      "version": "0.1.0",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/identity-security"
+    },
+    {
+      "name": "application-endpoint-security",
+      "description": "Tracks authorized security assessment coverage across web, cloud, mobile, firmware, endpoint persistence, and offline password auditing without turning missing evidence into clean results.",
+      "version": "0.1.0",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/application-endpoint-security"
+    },
+    {
+      "name": "network-protocol-security",
+      "description": "Plans and assesses wireless, network-protocol, traffic, command-channel, and bounded covert-channel security work with explicit scope, safety, evidence, and detection boundaries.",
+      "version": "0.1.0",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/network-protocol-security"
+    },
+    {
+      "name": "binary-forensics",
+      "description": "Triages supplied binary faults, volatile-memory evidence, and suspected rootkits, and prepares bounded validation handoffs without execution or weaponization.",
+      "version": "0.1.0",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/binary-forensics"
+    },
+    {
+      "name": "detection-validation",
+      "description": "Builds and validates detections, audits telemetry coverage, tests defensive resilience, correlates incident evidence, and synthesizes control evidence without inflating coverage.",
+      "version": "0.1.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/detection-validation"
+    },
+    {
+      "name": "engagement-operations",
+      "description": "Provides engagement planning, AI threat modeling, action-proof review, security-tool governance, findings writing, and report assembly with defensible evidence boundaries.",
+      "version": "0.2.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/engagement-operations"
+    },
+    {
+      "name": "rag-security",
+      "description": "Maps retrieval surfaces and assesses source integrity, tenant isolation, context handling, data exposure, and cleanup in RAG systems.",
+      "version": "0.2.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/rag-security"
+    },
+    {
+      "name": "ml-system-security",
+      "description": "Audits ML artifact lifecycles, decision boundaries, dataset integrity, and model-serving exposure with explicit evidence states.",
+      "version": "0.2.1",
+      "author": {
+        "name": "zero-lab.ai",
+        "email": "contact@zero-lab.ai",
+        "url": "https://zero-lab.ai"
+      },
+      "source": "./plugins/ml-system-security"
+    }
+  ]
+}

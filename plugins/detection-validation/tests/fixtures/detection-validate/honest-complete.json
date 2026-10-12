@@ -1,0 +1,5 @@
+{"techniques": [
+  {"id": "T1595.001", "name": "Port Scan", "executed": true, "coverage": "covered", "rule": "rb-recon-001"},
+  {"id": "T1558.003", "name": "Kerberoasting", "executed": true, "coverage": "covered", "rule": "rb-cred-004"},
+  {"id": "T1589", "name": "Gather Identity (OSINT)", "executed": true, "coverage": "not-detectable"}
+]}

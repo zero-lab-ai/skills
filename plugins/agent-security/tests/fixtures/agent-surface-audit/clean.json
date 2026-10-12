@@ -1,0 +1,16 @@
+{
+  "tools": [
+    {
+      "name": "get_weather",
+      "description": "Returns the current weather for a city.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "city": {"type": "string", "description": "City name", "maxLength": 100},
+          "units": {"type": "string", "description": "Temperature units", "enum": ["c", "f"]}
+        },
+        "required": ["city"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "recon-operations",
+  "version": "0.2.1",
+  "description": "Provides authorized network, public-exposure, human, physical, and AI-system reconnaissance with explicit scope, contact, noise, evidence, and automation boundaries.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

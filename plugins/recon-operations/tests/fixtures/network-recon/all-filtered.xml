@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<nmaprun scanner="nmap" args="nmap -sS -sU -sV -p- -oX out.xml 172.16.112.0/29" start="1">
+  <host><status state="up"/><address addr="172.16.112.20" addrtype="ipv4"/>
+    <ports>
+      <extraports state="filtered" count="65535"/>
+    </ports>
+  </host>
+  <runstats><finished elapsed="900"/></runstats>
+</nmaprun>

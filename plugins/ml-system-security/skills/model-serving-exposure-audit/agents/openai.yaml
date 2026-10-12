@@ -1,0 +1,6 @@
+interface:
+  display_name: "Model Serving Exposure Audit"
+  short_description: "Audit model serving infrastructure exposure"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

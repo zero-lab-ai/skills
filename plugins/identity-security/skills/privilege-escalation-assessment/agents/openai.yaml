@@ -1,0 +1,6 @@
+interface:
+  display_name: "Privilege Escalation Assessment"
+  short_description: "Assess privilege escalation for authorized security work"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

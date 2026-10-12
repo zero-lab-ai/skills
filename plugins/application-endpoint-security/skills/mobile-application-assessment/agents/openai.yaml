@@ -1,0 +1,6 @@
+interface:
+  display_name: "Mobile Application Assessment"
+  short_description: "Assess Android and iOS application security coverage"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

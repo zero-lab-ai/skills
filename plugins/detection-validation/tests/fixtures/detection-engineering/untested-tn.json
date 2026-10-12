@@ -1,0 +1,4 @@
+{"rules": [
+  {"id": "rb-kerb-001", "attack": "T1558.003",
+   "true_positive": {"tested": true, "fired": true}}
+]}

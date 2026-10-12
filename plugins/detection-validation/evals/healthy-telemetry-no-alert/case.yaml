@@ -1,0 +1,26 @@
+schema_version: "1.1"
+name: healthy-telemetry-no-alert
+description: >
+  A bounded technique was executed and its expected telemetry arrived, but no
+  alert was generated during the complete query window.
+tags: [not-detected, telemetry-health, gap]
+
+execution:
+  prompt: |
+    Use detection-validate to classify this authorized purple-team record.
+
+    Technique T1059.001 variant V-3 executed once in the isolated range at
+    14:03:12Z; receipt exec-44 confirms success. The expected process event is
+    present in the telemetry store at 14:03:13Z. Collector health was green for
+    13:55Z-14:15Z. The SOC queried that complete window plus ingestion delay and
+    found no alert or correlated case. A matching rule exists in the repository.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The technique is classified not-detected, with the execution, telemetry,
+  health, and alert-query evidence kept separate. The existing rule is not
+  accepted as coverage, and the gap remains owned and visible.

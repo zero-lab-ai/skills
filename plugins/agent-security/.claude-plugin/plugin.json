@@ -1,0 +1,10 @@
+{
+  "name": "agent-security",
+  "version": "0.3.1",
+  "description": "Reviews agent and MCP surfaces, tests prompt-injection and runtime controls, and maps identity and authority across agent handoffs.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

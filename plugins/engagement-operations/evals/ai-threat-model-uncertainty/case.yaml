@@ -1,0 +1,27 @@
+schema_version: "1.1"
+name: ai-threat-model-uncertainty
+description: >
+  A partial design diagram omits workload identity and approval placement, and
+  the exercise tests whether uncertainty remains explicit.
+tags: [threat-model, assumptions, uncertainty]
+
+execution:
+  prompt: |
+    Use ai-threat-model for a design review. The supplied diagram shows users,
+    an application, a model gateway, retrieval, and a ticket-creation tool. It
+    does not show which identity calls the tool, whether approval occurs before
+    or after argument construction, or whether retrieved text can reach tool
+    arguments. The design owner says these are probably standard defaults.
+
+    Return the threat model and priority review questions. Do not plan live
+    exploitation.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  The model records all three missing facts as consequential assumptions, keeps
+  attack paths conditional, separates instruction, data, and identity flows,
+  and turns uncertainty into focused evidence requests rather than defaults.

@@ -1,0 +1,8 @@
+{"rules": [
+  {"id": "rb-cred-001", "attack": "T1003.001",
+   "true_positive": {"tested": true, "fired": true},
+   "true_negative": {"tested": true, "fired": false}, "fp_rate": 0.02},
+  {"id": "rb-recon-002", "attack": "T1590",
+   "true_positive": {"tested": true, "fired": true},
+   "true_negative": {"tested": true, "fired": false}, "fp_rate": 0.1}
+]}

@@ -1,0 +1,5 @@
+{"rules": [
+  {"id": "rb-noisy-001", "attack": "T1059",
+   "true_positive": {"tested": true, "fired": true},
+   "true_negative": {"tested": true, "fired": true}, "fp_rate": 0.4}
+]}

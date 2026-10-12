@@ -1,0 +1,6 @@
+interface:
+  display_name: "Physical Recon"
+  short_description: "Perform physical for authorized security work"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

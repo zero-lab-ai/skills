@@ -1,0 +1,6 @@
+interface:
+  display_name: "Defensive Control Evidence Synthesis"
+  short_description: "Synthesize defensive control evidence"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

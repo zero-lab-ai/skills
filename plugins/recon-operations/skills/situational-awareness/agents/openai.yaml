@@ -1,0 +1,6 @@
+interface:
+  display_name: "Situational Awareness"
+  short_description: "Assess a foothold within an operation's noise budget"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Binary Fault Validation Readiness"
+  short_description: "Review binary fault evidence before isolated validation"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

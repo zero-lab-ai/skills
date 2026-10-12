@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cloud Attack Path"
+  short_description: "Map cloud identity and authorization attack paths"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

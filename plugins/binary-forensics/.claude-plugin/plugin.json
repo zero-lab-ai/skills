@@ -1,0 +1,10 @@
+{
+  "name": "binary-forensics",
+  "version": "0.1.0",
+  "description": "Triages supplied binary faults, volatile-memory evidence, and suspected rootkits, and prepares bounded validation handoffs without execution or weaponization.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Web Assessment Coverage"
+  short_description: "Track web assessment coverage across surfaces and roles"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"

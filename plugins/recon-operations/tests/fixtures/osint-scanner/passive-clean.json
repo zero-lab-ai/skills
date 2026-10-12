@@ -1,0 +1,8 @@
+{"stealth": "passive", "target": "example.com",
+ "actions": [
+   {"tool": "crtsh", "note": "subdomains from CT logs"},
+   {"tool": "shodan", "note": "open ports from prior scans"},
+   {"tool": "amass", "mode": "passive", "note": "aggregator sources only"},
+   {"tool": "dehashed", "note": "reused creds"},
+   {"tool": "dig", "mode": "cache", "note": "MX/TXT from public resolver"}
+ ]}

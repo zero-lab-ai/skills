@@ -1,0 +1,81 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate plugins and skills
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          enable-cache: false
+      - name: Install linters
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q shellcheck shfmt
+      - name: Validator self-test
+        run: python3 -I .github/scripts/validate_plugins.py --self-test
+      - name: Validate plugins
+        run: python3 -I .github/scripts/validate_plugins.py
+      - name: Version bump check
+        if: github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'no-version-bump')
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: python3 -I .github/scripts/check_version_bump.py --base "origin/$BASE_REF"
+      - name: Lint
+        run: |
+          uvx ruff@0.14.13 check --output-format=concise
+          uvx ruff@0.14.13 format --check
+          find plugins .github/scripts -name '*.sh' -type f -exec shellcheck -x {} +
+          find plugins .github/scripts -name '*.sh' -type f -exec shfmt -i 2 -ci -d {} +
+      - name: Plugin test suites
+        run: make shell-suites
+  # Loadability under the real CLIs. Needs the CLIs installed; kept separate so
+  # a missing CLI does not mask validator failures.
+  loadability:
+    name: Load with Claude Code and Codex
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - name: Install Claude Code CLI # zizmor: ignore[adhoc-packages]
+        run: |
+          npm install --global --prefix "$RUNNER_TEMP/claude-cli" \
+            "@anthropic-ai/claude-code@2.1.220"
+          echo "$RUNNER_TEMP/claude-cli/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/claude-cli/bin/claude" --version
+      - name: Install Codex CLI # zizmor: ignore[adhoc-packages]
+        env:
+          CODEX_CLI_VERSION: "0.146.0"
+        run: |
+          npm install --global --prefix "$RUNNER_TEMP/codex-cli" \
+            "@openai/codex@${CODEX_CLI_VERSION}"
+          echo "$RUNNER_TEMP/codex-cli/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/codex-cli/bin/codex" --version
+      - name: Claude Code loads every plugin
+        run: python3 -I .github/scripts/check_claude_loadability.py
+      - name: Codex loads every plugin and skill
+        run: python3 -I .github/scripts/check_codex_loadability.py

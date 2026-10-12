@@ -1,0 +1,14 @@
+# Every plugin lists at least one owner. The validator checks this.
+
+/plugins/agent-security/ @pitl0rd
+/plugins/recon-operations/ @pitl0rd
+/plugins/identity-security/ @pitl0rd
+/plugins/application-endpoint-security/ @pitl0rd
+/plugins/network-protocol-security/ @pitl0rd
+/plugins/binary-forensics/ @pitl0rd
+/plugins/detection-validation/ @pitl0rd
+/plugins/engagement-operations/ @pitl0rd
+/plugins/rag-security/ @pitl0rd
+/plugins/ml-system-security/ @pitl0rd
+/.github/ @pitl0rd
+/scripts/ @pitl0rd

@@ -1,0 +1,10 @@
+{
+  "name": "application-endpoint-security",
+  "version": "0.1.0",
+  "description": "Tracks authorized security assessment coverage across web, cloud, mobile, firmware, endpoint persistence, and offline password auditing without turning missing evidence into clean results.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

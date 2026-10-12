@@ -1,0 +1,29 @@
+schema_version: "1.1"
+name: reproduced-cross-account-access
+description: >
+  A normal user can read another account's invoice through a direct object
+  reference. A WAF is claimed but no control evidence is supplied.
+tags: [finding, severity, unverified-control]
+
+execution:
+  prompt: |
+    Use findings-report to write the report entry from this authorized test.
+
+    A standard authenticated account requested GET /api/invoices/8421 and
+    received HTTP 200 with the name, address, line items, and payment status of
+    a different customer. Repeating with invoice 8422 returned a second other-
+    customer record. The same account cannot access the other customer's
+    profile endpoint. The affected build is 2026.10.4. The owner says a WAF
+    probably prevents exploitation at scale, but supplied no WAF logs or rule
+    evidence. Evidence references are req-17, resp-17, req-18, and resp-18.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill]
+
+runs: 3
+
+expected_outcome: >
+  The response writes one reproducible authorization finding, derives severity
+  from cross-account data exposure and the ordinary-account precondition,
+  keeps the WAF claim unverified, bounds impact to the demonstrated invoice
+  data, and gives a concrete authorization fix and separate mitigation if any.

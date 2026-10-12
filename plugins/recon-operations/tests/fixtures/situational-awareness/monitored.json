@@ -1,0 +1,3 @@
+{"stealth": "required", "actions": [
+  {"cmd": "powershell Get-ADUser -Filter *", "note": "works but logged"}
+]}

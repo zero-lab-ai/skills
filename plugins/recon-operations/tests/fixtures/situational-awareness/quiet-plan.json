@@ -1,0 +1,5 @@
+{"stealth": "required", "actions": [
+  {"cmd": "whoami"}, {"cmd": "id"}, {"cmd": "arp -a", "note": "hosts this box already talked to"},
+  {"cmd": "netstat -ano"}, {"cmd": "cat /etc/passwd"}, {"cmd": "ip route"},
+  {"cmd": "ldapsearch -x -b dc=corp,dc=local", "note": "SPNs, looks like admin"}
+]}

@@ -1,0 +1,30 @@
+schema_version: "1.1"
+name: agent-handoff-authority
+description: >
+  An authenticated agent handoff is accepted, but the receiver uses ambient
+  privilege and the approval is not bound to the final target.
+tags: [agent-handoff, delegated-authority, confused-deputy]
+
+execution:
+  prompt: |
+    Use agent-trust-boundary-audit to review this architecture note. Agent A
+    signs a request asking Agent B to export a staging report. Agent B verifies
+    A's service identity, then uses its own production-capable workload identity
+    to call the export tool. The approval record names "export report" but does
+    not bind the tenant, report ID, destination, receiver identity, or expiry.
+    Logs show the request was accepted; no export receipt is available.
+
+    Separate authentication, authorization, delegated authority, and effect.
+    Identify the trust-boundary failure and the evidence still needed. Do not
+    invoke either agent or tool.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  Authentication of Agent A is preserved as evidence, but authorization and
+  delegated authority are not inferred. The ambient production identity and
+  unbound approval are identified as a confused-deputy path, while export effect
+  remains unproven.

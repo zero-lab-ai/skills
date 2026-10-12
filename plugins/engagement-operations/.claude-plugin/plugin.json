@@ -1,0 +1,10 @@
+{
+  "name": "engagement-operations",
+  "version": "0.2.1",
+  "description": "Provides engagement planning, AI threat modeling, action-proof review, security-tool governance, findings writing, and report assembly with defensible evidence boundaries.",
+  "author": {
+    "name": "zero-lab.ai",
+    "email": "contact@zero-lab.ai",
+    "url": "https://zero-lab.ai"
+  }
+}

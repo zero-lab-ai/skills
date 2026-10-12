@@ -1,0 +1,29 @@
+schema_version: "1.1"
+name: dataset-lineage-gap
+description: >
+  A training snapshot is stored immutably, but source, transformation, review,
+  and model-consumption lineage are incomplete.
+tags: [ml, dataset-integrity, lineage]
+
+execution:
+  prompt: |
+    Use dataset-integrity-assessment to review this supplied evidence. Snapshot
+    train-2026-10-01 is in an object-lock bucket with a recorded digest. The
+    record does not identify source owners, acquisition terms, transformation
+    versions, exclusion decisions, reviewer identity, or which model build
+    consumed it. A dashboard labels the snapshot "trusted and clean." No raw
+    records are provided.
+
+    State what the immutable storage and digest prove, what the lineage gaps
+    prevent concluding, and the highest-priority evidence requests. Do not
+    retrieve or inspect the dataset.
+  max_turns: 20
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, Bash]
+
+runs: 3
+
+expected_outcome: >
+  Immutability and digest evidence are preserved without treating them as proof
+  of trustworthy content. The missing source, transformation, review, decision,
+  and consumption lineage blocks clean or trusted conclusions.

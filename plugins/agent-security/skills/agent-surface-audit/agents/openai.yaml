@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agent Surface Audit"
+  short_description: "Audit agent tool surfaces for security risks"
+  icon_small: "assets/zero-lab-mark.svg"
+  icon_large: "assets/zero-lab-mark.svg"
+  brand_color: "#30A46C"
