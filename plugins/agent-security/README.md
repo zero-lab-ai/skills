@@ -33,7 +33,8 @@ Each skill folder remains independently portable to any harness that reads
 - Claude Code: strict manifest validation and marketplace install, 2026-10-12.
 - Codex CLI: marketplace and skill discovery, 2026-10-12.
 - OpenCode 1.18.35 with `forge1/qwen3.8-27b`: native skill discovery and one
-  pilot run for each of the five behavioral cases, 2026-10-12.
+  pilot run for each of five behavioral cases, 2026-10-12; one isolated
+  prompt-injection chain-mapping case, 2026-10-15.
 
 ## License
 
