@@ -23,6 +23,7 @@ individual skill folder into any agent harness that reads `SKILL.md`.
 - [Trust and safety](#trust-and-safety)
 - [Repository structure](#repository-structure)
 - [Contributing](#contributing)
+- [Contributors](#contributors)
 - [Security](#security)
 - [License](#license)
 
@@ -268,6 +269,10 @@ make check
 ```
 
 The same validator and plugin suites run in CI.
+
+## Contributors
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for project attribution.
 
 ## Security
 
