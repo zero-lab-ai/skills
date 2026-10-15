@@ -6,14 +6,14 @@
     "url": "https://zero-lab.ai"
   },
   "metadata": {
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Security skills from zero-lab.ai for authorized assessment, detection, and engagement work"
   },
   "plugins": [
     {
       "name": "agent-security",
       "description": "Reviews agent and MCP surfaces, tests prompt-injection and runtime controls, and maps identity and authority across agent handoffs.",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "author": {
         "name": "zero-lab.ai",
         "email": "contact@zero-lab.ai",
